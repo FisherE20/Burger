@@ -1,0 +1,8 @@
+body {
+    background-image: url("../img/burgerbg.jpg");
+}
+
+h1 {
+    font-family: 'Luckiest Guy', cursive;
+    color: rgb(195, 31, 31);
+}

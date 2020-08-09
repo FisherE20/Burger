@@ -1,33 +1,22 @@
-var express = require("express");
-var exphbs = require("express-handlebars");
+// Set up MySQL connection.
 var mysql = require("mysql");
-
-var app = express();
-
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 8080;
-
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 
 var connection = mysql.createConnection({
   host: "localhost",
-  port: 3306,
+  port: 8080,
   user: "root",
-  password: "F1shB0wl2020!",
-  database: "burgers_db"
+  password: "F1shBowl2020!",
+  database: "burgers_db",
 });
 
-connection.connect(function(err) {
+// Make connection.
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
   }
-
   console.log("connected as id " + connection.threadId);
 });
+
+// Export connection for our ORM to use.
+module.exports = connection;
