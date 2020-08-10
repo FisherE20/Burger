@@ -1,7 +1,18 @@
-<h1>Eat-Da-Burger!</h1>
+<div>
+  <h1>Eat-Da-Burger!</h1>
+</div>
 
-<ul>
-  {{#each burger}}
-    
-  {{/each}}
-</ul>
+<div>
+  <ul>
+    {{#each burger}}
+    burger: devoured
+    {{/each}}
+  </ul>
+
+  <form class="create-form">
+    <textarea id="burgerName" rows="4" cols="40"></textarea>
+    <p>Type in the name of a burger you would like to order.</p>
+    <button type="submit">Order</button>
+  </form>
+
+</div>
