@@ -6,7 +6,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col" id="orders">
       <h2>Burgers that have been ordered</h2>
       <ul>
           {{#each burger}}
@@ -16,7 +16,7 @@
           {{/each}}
         </ul>
     </div>
-    <div class="col">
+    <div class="col" id="devour">
       <h2>Devoured Burgers</h2>
      <ul>
           {{#each burger}}
@@ -37,8 +37,10 @@
           <label for="burgerName"></label>
           <input type="text" class="form-input" id="burgerName">
           <small id="burger" class="form-text text-muted">Enter a burger you want to eat and Click the "Order" button</small>
+          <br> 
+          <button type="submit" class="btn btn-info">Order</button>
         </div>
-        <button type="submit" class="btn btn-info">Order</button>
+       
       </form>
     </div>
     <div class="col">
