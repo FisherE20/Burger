@@ -2,7 +2,7 @@
 
 ![Project Image](project-image-url)
 
->Short Project Blurb
+>Eat-Da-Burger!
 
 ---
 
@@ -17,7 +17,7 @@
 ---
 
 ## Description
-What is this project about. Who is the User? What is the purpose of this application? 
+This application allows for the user to enter the name of a burger they would like to order. That burger is than placed on the left hand side of the screen with a bu tton named "devour." When the user click on the devour button it is then moved to the right handside under "Devoured Burgers."
 
 #### Technologies
 
@@ -30,27 +30,30 @@ What is this project about. Who is the User? What is the purpose of this applica
 ## How To Use
 
 #### Installation
-
-
+To install this application you will need to first download or copy the repo from GitHub. After which, go to your command line and type in "npm i" to install all neccessary dependencies. Once installed type in "node server.js" this will connect you to the server. 
+```NPM
+    npm i
+    node server.js
+```
 
 #### API Reference
+    none
 
-```html
-    <p>dummy code</p>
-```
 [Back To The Top](#burger)
 
 ---
 
 ## References
+
+- Heroku - [Heroku](url)
+
 [Back To The Top](#burger)
 
 ---
 
 ## License
 
-
-Copyright(c) [2020] [Erin K Fisher]
+none
 
 [Back To The Top](#burger)
 
@@ -58,7 +61,7 @@ Copyright(c) [2020] [Erin K Fisher]
 
 ## Author Info
 
-- GitHub - [F1sherE20](url)
-- Website - [F1sherE20](url) 
+- GitHub - [F1sherE20](https://github.com/FisherE20/Burger)
+- Website - [F1sherE20](https://fishere20.github.io/Responsive-Portfolio/) 
 
 [Back To The Top](#burger)
