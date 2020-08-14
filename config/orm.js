@@ -49,25 +49,25 @@ let orm = {
   },
 
   create: function(table, cols, vals, cb) {
-    let queryString = "INSERT INTO" + table;
+    var queryString = "INSERT INTO " + table;
 
-    queryString += "(";
+    queryString += " (";
     queryString += cols.toString();
-    queryString += ")";
+    queryString += ") ";
     queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
-    querystring += ")";
+    queryString += ") ";
 
-    // console.log(queryString);
+    console.log(queryString);
 
-    connection.query(queryString, vals, cols, function(err,result) {
-      if (err) throw err;
+    connection.query(queryString, vals, function(err, result) {
+      if (err) {
+        throw err;
+      }
 
       cb(result);
     });
-
   },
-
   update: function (table, objColVals, condition, cb) {
     let queryString = "UPDATE" + table;
 

@@ -10,21 +10,34 @@
       <h2>Burgers that have been ordered</h2>
       <ul>
           {{#each burgers}}
-          {{#unless devoured}}
-          {{>burgers/burger-block devoured=true}}
+          {{#unless this.devoured}}
+         <ol> 
+          {{burger_name}}
+          <button class="change-devour" data-id="{{id}}" data-devourState="{{devoured}}">
+            {{#unless devoured}} Devour!{{/unless}}
+          </button>
+          </ol>
           {{/unless}}
           {{/each}}
         </ul>
     </div>
+
     <div class="col" id="devour">
       <h2>Devoured Burgers</h2>
-     <ul>
+     <ol>
           {{#each burgers}}
-          {{#if devoured}}
-          {{>burgers/burger-block devoured=false}}
+          {{#if this.devoured}}
+          {{!-- {{>burgers/burger-block devoured=false}} --}}
+         <ol>
+         {{burger_name}}
+         <button class="delete-burger" data-id="{{id}}" data-devourState="{{devoured}}">
+            {{#if devoured}}Delete!{{/if}}
+          </button>
+          </ol>
+
           {{/if}}
           {{/each}}
-        </ul>
+        </ol>
     </div>
   </div>
   <div class="row">
@@ -38,7 +51,7 @@
           <input type="text" class="form-input" id="ca" name="name">
           <small id="burger" class="form-text text-muted">Enter a burger you want to eat and Click the "Order" button</small>
           <br> 
-          <button type="submit" class="btn btn-info">Order</button>
+          <button class="btn btn-info" id="order-btn">Order</button>
         </div>
        
       </form>
