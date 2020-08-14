@@ -1,11 +1,11 @@
 // Import MYSQL connection
-const connection = require("./connection");
+const connection = require("./connection.js");
 
 
 function printQuestionMarks (num) {
   let arr = [];
 
-  for (let i =0; i< num; i++) {
+  for (let i = 0; i< num; i++) {
     arr.push("?");
   }
 
@@ -15,6 +15,7 @@ function printQuestionMarks (num) {
 // Helper function to covert object key/value pairs to sql syntax
 function objToSql(ob) {
   let arr = [];
+
   // loop through the keys and push the key/value as a string int arr
   for (var key in ob) {
     let value = ob[key];
@@ -36,8 +37,9 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 let orm = {
-  all: function (tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
+  all: function(tableInput, cb) {
+    let queryString = "SELECT * FROM " + tableInput + ";";
+    // console.log(queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
@@ -46,7 +48,7 @@ let orm = {
     });
   },
 
-  create: function(table, cols, vals,cb) {
+  create: function(table, cols, vals, cb) {
     let queryString = "INSERT INTO" + table;
 
     queryString += "(";
@@ -56,7 +58,7 @@ let orm = {
     queryString += printQuestionMarks(vals.length);
     querystring += ")";
 
-    console.log(queryString);
+    // console.log(queryString);
 
     connection.query(queryString, vals, cols, function(err,result) {
       if (err) throw err;
@@ -71,7 +73,7 @@ let orm = {
 
     queryString += "SET";
     queryString += objToSql(objColVals);
-    queryString += "WHERE";
+    queryString += " WHERE ";
     queryString += condition;
 
     console.log(queryString);
@@ -84,7 +86,7 @@ let orm = {
 
   delete: function(table, condition,cb) {
     let queryString = "DELETE FFROM" + table;
-    queryString += "WHERE";
+    queryString += " WHERE ";
     queryString += condition;
   
     connection.query(queryString, function(err,result) {

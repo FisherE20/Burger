@@ -1,5 +1,5 @@
 body{
-    background-image: url(./assets/burger.jpg) ;
+    background-image: url(../img/burger.jpg) ;
     margin:0;
     padding: 0;
 }
@@ -10,7 +10,7 @@ body{
     border-radius: 8px;
 }
  
-#order {
+#orders {
     background-color: white;
     width: 600px;
     border: 6px solid black;
@@ -58,5 +58,20 @@ h2 {
 
 li {
     
+    font-size: 18px;
+    
+} 
+
+.delete-burger {
+    font-size: 16px;
     background-color: rgb(250, 205, 4);
+    box-shadow: 4px 4px 4px#000607;
+    outline: none;
+}
+
+.change-devour {
+    font-size: 16px;
+    background-color: rgb(250, 205, 4);
+    box-shadow: 4px 4px 4px#000607;
+    outline: none;
 }

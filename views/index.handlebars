@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" id="welcome">
   <div class="container">
     <h1 class="display-4">Eat-Da-Burger</h1>
   </div>
@@ -9,9 +9,9 @@
     <div class="col" id="orders">
       <h2>Burgers that have been ordered</h2>
       <ul>
-          {{#each burger}}
+          {{#each burgers}}
           {{#unless devoured}}
-          {{>burger/burger-block devoured=true}}
+          {{>burgers/burger-block devoured=true}}
           {{/unless}}
           {{/each}}
         </ul>
@@ -19,10 +19,10 @@
     <div class="col" id="devour">
       <h2>Devoured Burgers</h2>
      <ul>
-          {{#each burger}}
-          {{#unless devoured}}
-          {{>burger/burger-block devoured=false}}
-          {{/unless}}
+          {{#each burgers}}
+          {{#if devoured}}
+          {{>burgers/burger-block devoured=false}}
+          {{/if}}
           {{/each}}
         </ul>
     </div>
@@ -34,8 +34,8 @@
     <div class="col">
       <form>
         <div class="form-group">
-          <label for="burgerName"></label>
-          <input type="text" class="form-input" id="burgerName">
+          <label for="ca"></label>
+          <input type="text" class="form-input" id="ca" name="name">
           <small id="burger" class="form-text text-muted">Enter a burger you want to eat and Click the "Order" button</small>
           <br> 
           <button type="submit" class="btn btn-info">Order</button>
