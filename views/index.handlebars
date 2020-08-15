@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotron-fluid" id="welcome">
   <div class="container">
-    <h1 class="display-4">Eat-Da-Burger</h1>
+    <h1 class="display-4">Eat-Da-Burger!</h1>
   </div>
 </div>
 
@@ -13,7 +13,7 @@
           {{#unless this.devoured}}
          <ol> 
           {{burger_name}}
-          <button class="change-devour" data-id="{{id}}" data-devourState="{{devoured}}">
+          <button class="change-devour" data-id={{id}} data-devourState="{{devoured}}">
             {{#unless devoured}} Devour!{{/unless}}
           </button>
           </ol>
@@ -27,7 +27,7 @@
      <ol>
           {{#each burgers}}
           {{#if this.devoured}}
-          {{!-- {{>burgers/burger-block devoured=false}} --}}
+        
          <ol>
          {{burger_name}}
          <button class="delete-burger" data-id="{{id}}" data-devourState="{{devoured}}">

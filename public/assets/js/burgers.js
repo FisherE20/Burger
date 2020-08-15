@@ -1,7 +1,10 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".change-devour").on("click", (event) => {
+    // $(".change-devour").on("click", (event) => {
+      $(document).on("click",".change-devour", function(event){
+      event.preventDefault();
       let id = $(this).data("id");
+      console.log("ID front JS: "+id);
       let newDevour = $(this).data("newdevour");
   
       let newDevourState = {
@@ -47,7 +50,8 @@ $(function() {
       );
     });
   
-    $(".delete-burger").on("click", (event) => {
+    // $(".delete-burger").on("click", (event) => {
+      $(document).on("click",".delete-burger", function(event){  
       let id = $(this).data("id");
   
       // Send the DELETE request.

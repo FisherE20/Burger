@@ -69,9 +69,9 @@ let orm = {
     });
   },
   update: function (table, objColVals, condition, cb) {
-    let queryString = "UPDATE" + table;
+    let queryString = " UPDATE " + table;
 
-    queryString += "SET";
+    queryString += " SET ";
     queryString += objToSql(objColVals);
     queryString += " WHERE ";
     queryString += condition;
@@ -85,7 +85,7 @@ let orm = {
   },
 
   delete: function(table, condition,cb) {
-    let queryString = "DELETE FFROM" + table;
+    let queryString = " DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
   

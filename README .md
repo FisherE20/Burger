@@ -1,6 +1,6 @@
 # Burger
 
-![Project Image](project-image-url)
+![Project Image]()
 
 >Eat-Da-Burger!
 
