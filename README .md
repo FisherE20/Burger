@@ -1,6 +1,6 @@
 # Burger
 
-![Project Image]()
+![Project Image](./public/assets/img/appPic.png)
 
 >Eat-Da-Burger!
 
